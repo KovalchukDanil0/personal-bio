@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { setTheme } from "$lib/context";
-	import "$styles/_index.scss";
+	import { setTheme } from "#lib/context.js";
+	import "#styles";
 
 	let { data, children } = $props();
 	let { theme } = $derived(data);
@@ -13,7 +13,7 @@
 </main>
 
 <style lang="scss">
-	@use "$styles/variables" as v;
+	@use "#styles/variables" as v;
 
 	main {
 		display: flex;

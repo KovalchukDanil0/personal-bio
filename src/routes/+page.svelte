@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Avatar, Link } from "$lib/components";
+	import { Avatar, Link } from "#components";
 	import GMail from "virtual:icons/cib/gmail";
 	import ItchIo from "virtual:icons/cib/itch-io";
 	import KoFi from "virtual:icons/cib/ko-fi";

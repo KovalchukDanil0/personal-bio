@@ -1,6 +1,6 @@
+import { getTextDirection } from "#lib/paraglide/runtime.js";
+import { paraglideMiddleware } from "#lib/paraglide/server.js";
 import type { Theme } from "#lib/themes.js";
-import { getTextDirection } from "$lib/paraglide/runtime";
-import { paraglideMiddleware } from "$lib/paraglide/server";
 import type { Handle } from "@sveltejs/kit";
 import { sequence } from "@sveltejs/kit/hooks";
 
