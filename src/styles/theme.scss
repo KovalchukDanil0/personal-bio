@@ -1,0 +1,28 @@
+@use "variables" as v;
+
+:root {
+	--primary-color: #{v.$primary-color-light};
+	--secondary-color: #{v.$secondary-color-light};
+
+	--background-color: #{v.$background-color-light};
+	--button-text-color: #{v.$text-color-dark};
+	--button-background-color: #{v.$background-color-light};
+	--text-color: #{v.$text-color-dark};
+
+	--leaflet-background-color: white;
+	--leaflet-filter: none;
+
+	&[data-theme="dark"] {
+		--primary-color: #{v.$primary-color-dark};
+		--secondary-color: #{v.$secondary-color-dark};
+
+		--background-color: #{v.$background-color-dark};
+		--button-text-color: #{v.$text-color-light};
+		--button-background-color: #{v.$background-color-dark};
+		--text-color: #{v.$text-color-light};
+
+		--leaflet-background-color: black;
+		--leaflet-filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3)
+			brightness(0.7);
+	}
+}

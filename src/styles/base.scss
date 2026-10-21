@@ -1,0 +1,43 @@
+@use "theme" as t;
+@use "variables" as v;
+
+* {
+	box-sizing: border-box;
+}
+
+:root {
+	font-family: "Open Sans", sans-serif;
+}
+
+html {
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+
+body {
+	padding: v.$body-padding;
+	min-height: 100dvh;
+}
+
+#app {
+	display: contents;
+}
+
+p,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--text-color);
+}
+
+@media (prefers-reduced-motion) {
+	::view-transition-group(*),
+	::view-transition-old(*),
+	::view-transition-new(*) {
+		animation: none !important;
+	}
+}
