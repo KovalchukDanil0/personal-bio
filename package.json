@@ -32,6 +32,11 @@
 		"wrangler": "^4.151.3"
 	},
 	"dependencies": {
+		"cookie": "^2.0.1",
 		"normalize.css": "^8.0.1"
+	},
+	"imports": {
+		"#lib": "./src/lib/index.ts",
+		"#lib/*": "./src/lib/*"
 	}
 }

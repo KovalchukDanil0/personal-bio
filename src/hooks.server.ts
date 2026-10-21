@@ -1,6 +1,8 @@
+import type { Theme } from "#lib/themes.js";
 import { getTextDirection } from "$lib/paraglide/runtime";
 import { paraglideMiddleware } from "$lib/paraglide/server";
 import type { Handle } from "@sveltejs/kit";
+import { sequence } from "@sveltejs/kit/hooks";
 
 const handleParaglide: Handle = ({ event, resolve }) =>
 	paraglideMiddleware(event.request, ({ request, locale }) => {
@@ -14,4 +16,12 @@ const handleParaglide: Handle = ({ event, resolve }) =>
 		});
 	});
 
-export const handle: Handle = handleParaglide;
+export const handleTheme: Handle = async ({ event, resolve }) => {
+	const theme = (event.cookies.get("theme") as Theme | undefined) ?? "dark";
+
+	return await resolve(event, {
+		transformPageChunk: ({ html }) => html.replace("%theme%", theme),
+	});
+};
+
+export const handle = sequence(handleParaglide, handleTheme);

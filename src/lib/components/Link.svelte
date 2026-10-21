@@ -2,24 +2,20 @@
 	import type { Snippet } from "svelte";
 	import type { HTMLAnchorAttributes } from "svelte/elements";
 
-	interface Props extends HTMLAnchorAttributes {
+	interface Props extends Omit<HTMLAnchorAttributes, "target"> {
 		children: Snippet;
+		newTab?: boolean;
 	}
 
-	let { children, ...restProps }: Props = $props();
+	let { children, newTab, ...restProps }: Props = $props();
 </script>
 
-<a {...restProps} href="mailto:test@gmail.com">{@render children()}</a>
+<a {...restProps} target={newTab ? "_blank" : "_self"}>{@render children()}</a>
 
 <style lang="scss">
 	a {
 		text-decoration: none;
-		width: 100%;
+		width: fit-content;
 		text-align: center;
-
-		border-color: gray;
-		border-style: solid;
-		border-radius: 5px;
-		padding: 6px 4px;
 	}
 </style>

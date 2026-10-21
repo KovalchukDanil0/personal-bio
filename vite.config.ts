@@ -4,6 +4,7 @@ import { sveltekit } from "@sveltejs/kit/vite";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 import browserslist from "browserslist";
 import { browserslistToTargets } from "lightningcss";
+import unpluginIcons from "unplugin-icons/vite";
 import { defineConfig } from "vite";
 
 export default defineConfig({
@@ -17,7 +18,7 @@ export default defineConfig({
 			adapter: adapter(),
 			preprocess: vitePreprocess(),
 		}),
-
+		unpluginIcons({ compiler: "svelte" }),
 		paraglideVitePlugin({
 			project: "./project.inlang",
 			outdir: "./src/lib/paraglide",

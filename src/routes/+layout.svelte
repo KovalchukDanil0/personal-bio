@@ -1,7 +1,11 @@
 <script lang="ts">
+	import { setTheme } from "$lib/context";
 	import "$styles/_index.scss";
 
-	let { children } = $props();
+	let { data, children } = $props();
+	let { theme } = $derived(data);
+
+	setTheme(() => theme);
 </script>
 
 <main>
