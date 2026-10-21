@@ -28,7 +28,8 @@
 		"svelte": "^5.57.2",
 		"svelte-check": "^4.7.7",
 		"typescript": "^6.0.3",
-		"vite": "^8.3.5"
+		"vite": "^8.3.5",
+		"wrangler": "^4.151.3"
 	},
 	"dependencies": {
 		"normalize.css": "^8.0.1"
