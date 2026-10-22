@@ -1,23 +1,25 @@
 <script lang="ts">
-	import { Avatar, Link } from "#components";
-	import GMail from "virtual:icons/cib/gmail";
-	import ItchIo from "virtual:icons/cib/itch-io";
-	import KoFi from "virtual:icons/cib/ko-fi";
+	import { Avatar, SocialLinks } from "#components";
 </script>
 
 <Avatar />
 
+<h1>Danylo</h1>
+<h2>Software Engineer</h2>
+
 <section class="social-links">
-	<Link href="mailto:test@gmail.com" aria-label="Write an email" newTab><GMail /></Link>
-	<Link href="https://danylo-kovalchuk.itch.io" aria-label="Check out my games on itch.io" newTab>
-		<ItchIo />
-	</Link>
-	<Link href="https://ko-fi.com/danylokovalchuk" aria-label="Support me on ko-fi.com" newTab>
-		<KoFi />
-	</Link>
+	<SocialLinks />
 </section>
 
 <style lang="scss">
+	h1 {
+		margin-bottom: 0;
+	}
+
+	h2 {
+		margin-top: 0;
+	}
+
 	.social-links {
 		display: flex;
 		flex-direction: row;

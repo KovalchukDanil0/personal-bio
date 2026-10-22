@@ -12,20 +12,29 @@
 
 	let themeGetter = $state(getTheme());
 	let theme = $derived(themeGetter());
+	let newTheme = $state<Theme>();
+
+	$effect(() => {
+		newTheme = theme === "dark" ? "light" : "dark";
+	});
 </script>
 
 <Button
 	variant="theme-toggle"
+	aria-label="Change theme to {newTheme}"
 	onclick={() => {
-		const newTheme: Theme = theme === "dark" ? "light" : "dark";
+		if (!newTheme) {
+			return;
+		}
+
 		theme = newTheme;
 		setThemeCookie(newTheme);
 	}}
 	{...props}
 >
 	{#if theme === "dark"}
-		<Moon />
+		<Moon width="auto" height="auto" />
 	{:else}
-		<Sun />
+		<Sun width="auto" height="auto" />
 	{/if}
 </Button>

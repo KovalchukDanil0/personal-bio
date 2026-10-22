@@ -33,9 +33,12 @@
 			top: 0;
 			right: 0;
 
+			padding: 6px;
 			width: 20%;
 			height: 20%;
 			border-radius: 100%;
+			background-color: var(--background-color);
+			box-shadow: 0.3em 0.3em 1.5em black;
 		}
 	}
 </style>

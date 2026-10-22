@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { setTheme } from "#lib/context.js";
 	import "#styles";
+	import { MetaTags } from "svelte-meta-tags";
 
 	let { data, children } = $props();
 	let { theme } = $derived(data);
@@ -8,13 +9,13 @@
 	setTheme(() => theme);
 </script>
 
+<MetaTags title="Danylo - Bio" />
+
 <main>
 	{@render children()}
 </main>
 
 <style lang="scss">
-	@use "#styles/variables" as v;
-
 	main {
 		display: flex;
 		flex-direction: column;
@@ -23,6 +24,6 @@
 		padding: 0 25vw;
 		gap: 20px;
 		width: 100%;
-		min-height: calc(100dvh - (2 * v.$body-padding));
+		min-height: 100dvh;
 	}
 </style>
