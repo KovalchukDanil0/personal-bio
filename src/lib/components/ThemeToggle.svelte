@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { getTheme } from "#lib/context.js";
+	import { m } from "#lib/paraglide/messages.js";
 	import { setThemeCookie, type Theme } from "#lib/themes.js";
 	import type { HTMLButtonAttributes } from "svelte/elements";
 	import Moon from "virtual:icons/bx/moon";
@@ -16,12 +17,16 @@
 
 	$effect(() => {
 		newTheme = theme === "dark" ? "light" : "dark";
+		title = m["theme_toggle_title"]({ theme: newTheme });
 	});
+
+	let title = $state<string>();
 </script>
 
 <Button
+	{title}
 	variant="theme-toggle"
-	aria-label="Change theme to {newTheme}"
+	aria-label={title}
 	onclick={() => {
 		if (!newTheme) {
 			return;

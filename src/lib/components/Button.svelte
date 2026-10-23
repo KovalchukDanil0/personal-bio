@@ -2,7 +2,7 @@
 	import type { Snippet } from "svelte";
 	import type { HTMLButtonAttributes } from "svelte/elements";
 
-	type Variants = "theme-toggle" | "arrow-right";
+	type Variants = "theme-toggle" | "lang-toggle" | "arrow-right";
 
 	export interface Props extends HTMLButtonAttributes {
 		children: Snippet;
@@ -12,7 +12,10 @@
 	let { children, variant, ...restProps }: Props = $props();
 </script>
 
-<button {...restProps} class={variant}>
+<button
+	{...restProps}
+	class={[variant, ["lang-toggle", "theme-toggle"].includes(variant ?? "") && "toggle"]}
+>
 	{@render children()}
 </button>
 
@@ -28,17 +31,25 @@
 
 		cursor: pointer;
 
-		&.theme-toggle {
+		&.toggle {
 			position: absolute;
-			top: 0;
-			right: 0;
 
 			padding: 6px;
-			width: 20%;
-			height: 20%;
+			width: 17%;
+			height: 17%;
 			border-radius: 100%;
 			background-color: var(--background-color);
 			box-shadow: 0.3em 0.3em 1.5em black;
+		}
+
+		&.theme-toggle {
+			top: -4%;
+			right: 10%;
+		}
+
+		&.lang-toggle {
+			top: 12%;
+			right: -5%;
 		}
 	}
 </style>

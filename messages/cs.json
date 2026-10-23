@@ -1,4 +1,14 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"hello_world": "Hello, {name} from cs!"
+	"headline": "Softwarový inženýr",
+	"bottom_link": "Zjistěte o mně více",
+	"profile_img_alt": "Profil",
+	"github_icon_title": "Podívejte se na můj GitHub",
+	"chrome_icon_title": "Navštivte můj obchod s rozšířeními pro Chrome",
+	"firefox_icon_title": "Navštivte můj obchod s rozšířeními pro Firefox",
+	"itch_io_icon_title": "Podívejte se na mé hry na itch.io",
+	"ko_fi_icon_title": "Podpořte mě na ko-fi.com",
+	"email_icon_title": "Napište e-mail",
+	"theme_toggle_title": "Změnit motiv na {theme}",
+	"lang_toggle_title": "Změnit jazyk na {lang}"
 }

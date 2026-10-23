@@ -16,6 +16,8 @@
 </main>
 
 <style lang="scss">
+	@use "#styles/mixins" as m;
+
 	main {
 		display: flex;
 		flex-direction: column;
@@ -25,5 +27,9 @@
 		gap: 20px;
 		width: 100%;
 		min-height: 100dvh;
+
+		@include m.screen-small {
+			padding: 0;
+		}
 	}
 </style>

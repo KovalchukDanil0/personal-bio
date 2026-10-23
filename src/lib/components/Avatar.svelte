@@ -1,15 +1,19 @@
 <script lang="ts">
+	import { m } from "#lib/paraglide/messages.js";
+	import { asset } from "$app/paths";
 	import type { HTMLAttributes } from "svelte/elements";
-	import { ThemeToggle } from ".";
+	import { LangToggle, ThemeToggle } from ".";
 
 	type Props = HTMLAttributes<EventTarget>;
 
 	let props: Props = $props();
 </script>
 
-<div {...props} class="profile-picture">
-	<img src="https://avatars.githubusercontent.com/u/105009706?v=4" alt="Profile" />
+<div {...props} class="profile-picture animate-appear animate-grow">
+	<img src={asset("me.jpg")} alt={m["profile_img_alt"]()} />
+
 	<ThemeToggle />
+	<LangToggle />
 </div>
 
 <style lang="scss">

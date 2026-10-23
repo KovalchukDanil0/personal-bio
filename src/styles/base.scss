@@ -39,4 +39,8 @@ h6 {
 	::view-transition-new(*) {
 		animation: none !important;
 	}
+
+	* {
+		transition-duration: 0s !important;
+	}
 }
