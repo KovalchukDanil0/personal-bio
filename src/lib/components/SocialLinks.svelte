@@ -67,7 +67,7 @@
 </Link>
 
 <Link
-	href="mailto:test@gmail.com"
+	href="mailto:danilkovalchuk0@gmail.com"
 	variant="social-icon"
 	aria-label={emailTitle}
 	title={emailTitle}
