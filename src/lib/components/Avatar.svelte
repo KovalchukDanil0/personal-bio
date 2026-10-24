@@ -19,6 +19,8 @@
 <style lang="scss">
 	.profile-picture {
 		position: relative;
+		width: 20vh;
+		height: 20vh;
 	}
 
 	img {
@@ -26,7 +28,9 @@
 		border-style: none;
 		border-color: unset;
 		object-fit: cover;
-		width: 20vh;
+
+		width: 100%;
+		height: 100%;
 
 		box-shadow: 0.3em 0.3em 1em black;
 	}
